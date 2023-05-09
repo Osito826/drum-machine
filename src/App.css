@@ -1,0 +1,112 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: clip;
+  background-color: blue;
+}
+
+.App {
+  display: flex;
+  justify-content: flex-start;
+  margin: 200px auto;
+  background-color: rgb(154, 34, 154);
+  padding: 30px;
+  width: 50%;
+}
+.App #drum-machine {
+  display: flex;
+}
+.App #drum-machine .drum-pads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: green;
+}
+.App #drum-machine .drum-pads .drum-pad {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App #drum-machine .controls {
+  display: inline-block;
+  margin: auto 70px;
+}
+.App #drum-machine .controls .power {
+  background-color: white;
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle + span {
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle + span::before {
+  content: "";
+  width: 2em;
+  height: 1em;
+  background-color: hsl(0deg, 80%, 90%);
+  border-radius: 1em;
+  margin-right: 0.25em;
+  transition: 200ms ease-in-out;
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle + span::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0.1em;
+  content: "✕";
+  font-size: 0.5em;
+  height: 0.9em;
+  left: 0.2em;
+  width: 1.8em;
+  height: 1.8em;
+  background-color: hsl(0deg, 80%, 60%);
+  color: white;
+  border-radius: 1em;
+  transition: 200ms ease-in-out;
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle:checked + span::before {
+  background-color: hsl(100deg, 70%, 90%);
+}
+.App #drum-machine .controls .power input[type=checkbox].toggle:checked + span::after {
+  content: "✓";
+  transform: translate(100%);
+  background-color: hsl(100deg, 70%, 60%);
+}
+.App #drum-machine .controls #display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  width: 300px;
+  height: 20px;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+.App #drum-machine .controls h3 {
+  text-align: center;
+}
+.App #drum-machine .controls .sound {
+  background-color: red;
+  margin: 0px;
+  width: 100%;
+  height: 20px;
+}/*# sourceMappingURL=App.css.map */
